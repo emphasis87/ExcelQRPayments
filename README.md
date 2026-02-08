@@ -11,10 +11,16 @@ An Excel add-in for generating QR payment codes using the SPAYD (Short Payment D
 
 ## Installation
 
-1. Build the project: `dotnet build`
-2. Open the generated `.xll` file in Excel:
-   - 32-bit Excel: `src/ExcelQRPayments/bin/Debug/net8.0-windows/publish/ExcelQRPayments-AddIn-packed.xll`
-   - 64-bit Excel: `src/ExcelQRPayments/bin/Debug/net8.0-windows/publish/ExcelQRPayments-AddIn64-packed.xll`
+1. Download the latest `.xll` file from the [Releases page](https://github.com/emphasis87/ExcelQRPayments/releases/latest):
+   - 32-bit Excel: `ExcelQRPayments-AddIn-packed.xll`
+   - 64-bit Excel: `ExcelQRPayments-AddIn64-packed.xll`
+3. To install permanently, copy the `.xll` file to a local folder, e.g. `%APPDATA%\Microsoft\AddIns`
+4. In Excel, go to **File** > **Options** > **Add-ins**
+4. At the bottom, select **Excel Add-ins** and click **Go...**
+5. Click **Browse...**, navigate to the `.xll` file, and click **OK**
+6. Ensure the add-in is checked in the list and click **OK**
+
+>Alternatively you can quickly try it out by dragging and dropping the `.xll` file into a running Excel window.
 
 ## Functions
 
@@ -85,11 +91,13 @@ The add-in adds a "QR Payments" tab to the Excel ribbon with:
 
 - **Clear Formulas**: Replaces all `InsertPaymentQrCode` formulas with their values, allowing the workbook to be shared with users who don't have the add-in installed. QR code images are preserved.
 
-## Building
+## Building from source
 
 ```bash
 dotnet build
 ```
+
+The `.xll` files will be generated in `src/ExcelQRPayments/bin/Debug/net8.0-windows/publish/`.
 
 ## Testing
 
