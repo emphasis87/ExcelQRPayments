@@ -37,13 +37,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ExcelQRPayments-AddIn64
-          path: src/ExcelQRPayments/bin/Release/net8.0-windows/publish/ExcelQRPayments-AddIn64-packed.xll
+          path: src/ExcelQRPayments/bin/Release/net8.0-windows/publish/ExcelQRPayments-AddIn64.xll
 
       - name: Upload Add-In (32-bit)
         uses: actions/upload-artifact@v4
         with:
           name: ExcelQRPayments-AddIn32
-          path: src/ExcelQRPayments/bin/Release/net8.0-windows/publish/ExcelQRPayments-AddIn-packed.xll
+          path: src/ExcelQRPayments/bin/Release/net8.0-windows/publish/ExcelQRPayments-AddIn32.xll
 
   release:
     needs: build
@@ -68,5 +68,5 @@ jobs:
         with:
           generate_release_notes: true
           files: |
-            ExcelQRPayments-AddIn64-packed.xll
-            ExcelQRPayments-AddIn-packed.xll
+            ExcelQRPayments-AddIn64.xll
+            ExcelQRPayments-AddIn32.xll
