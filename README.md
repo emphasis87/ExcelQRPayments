@@ -12,14 +12,22 @@ An Excel add-in for generating QR payment codes using the SPAYD (Short Payment D
 ## Installation
 
 1. Download the latest `.xll` file from the [Releases page](https://github.com/emphasis87/ExcelQRPayments/releases/latest):
-   - 32-bit Excel: `ExcelQRPayments-AddIn-packed.xll`
-   - 64-bit Excel: `ExcelQRPayments-AddIn64-packed.xll`
+   - 32-bit Excel: `ExcelQRPayments-AddIn32.xll`
+   - 64-bit Excel: `ExcelQRPayments-AddIn64.xll`
+
+> To check if you need the 32-bit or 64-bit version, open Excel and go to **File** > **Account** > **About Excel**. You'll see "32-bit" or "64-bit" at the top of the window that opens.
+
 2. Right-click the downloaded `.xll` file, select **Properties**, check **Unblock**, and click **OK**
+
 3. To install permanently, copy the `.xll` file to a local folder, e.g. `%APPDATA%\Microsoft\AddIns`
+
 4. In Excel, go to **File** > **Options** > **Add-ins**
-4. At the bottom, select **Excel Add-ins** and click **Go...**
-5. Click **Browse...**, navigate to the `.xll` file, and click **OK**
-6. Ensure the add-in is checked in the list and click **OK**
+
+5. At the bottom, select **Excel Add-ins** and click **Go...**
+
+6. Click **Browse...**, navigate to the `.xll` file, and click **OK**
+
+7. Ensure the add-in is checked in the list and click **OK**
 
 >Alternatively you can quickly try it out by dragging and dropping the `.xll` file into a running Excel window.
 

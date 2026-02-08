@@ -12,6 +12,8 @@
     <ExcelDnaExplicitExports>false</ExcelDnaExplicitExports>
     <ExcelDnaLoadFromBytes>true</ExcelDnaLoadFromBytes>
     <ExcelDnaPack>true</ExcelDnaPack>
+    <ExcelDna32BitAddInSuffix>32</ExcelDna32BitAddInSuffix>
+    <ExcelDnaPackXllSuffix>%none%</ExcelDnaPackXllSuffix>
   </PropertyGroup>
 
   <ItemGroup>
