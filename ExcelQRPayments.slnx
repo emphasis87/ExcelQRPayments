@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ExcelQRPayments/ExcelQRPayments.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ExcelQRPayments.Tests/ExcelQRPayments.Tests.csproj" />
+  </Folder>
+</Solution>

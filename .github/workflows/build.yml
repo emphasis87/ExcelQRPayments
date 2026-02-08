@@ -1,0 +1,45 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      BUILD_VERSION: 1.0.${{ github.run_number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore ExcelQRPayments.slnx
+
+      - name: Build
+        run: dotnet build ExcelQRPayments.slnx --configuration Release --no-restore -p:Version=${{ env.BUILD_VERSION }}
+
+      - name: Test
+        run: dotnet test ExcelQRPayments.slnx --configuration Release --no-build --verbosity normal
+
+      - name: Upload Add-In (64-bit)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExcelQRPayments-AddIn64
+          path: src/ExcelQRPayments/bin/Release/net8.0-windows/publish/ExcelQRPayments-AddIn64-packed.xll
+
+      - name: Upload Add-In (32-bit)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExcelQRPayments-AddIn32
+          path: src/ExcelQRPayments/bin/Release/net8.0-windows/publish/ExcelQRPayments-AddIn-packed.xll

@@ -1,0 +1,27 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+  <ribbon>
+    <tabs>
+      <tab id="QRPaymentsTab" label="QR Payments">
+        <group id="ActionsGroup" label="Actions">
+          <button id="ClearButton"
+                  label="Clear Formulas"
+                  size="large"
+                  imageMso="Delete"
+                  screentip="Clear QR Payment Formulas"
+                  supertip="Replaces all InsertPaymentQrCode formulas with their values, so the workbook can be shared without the add-in. QR code images are preserved."
+                  onAction="OnClearFormulas" />
+        </group>
+        <group id="InfoGroup" label="Info">
+          <labelControl id="VersionLabel" getLabel="GetVersionLabel" />
+          <button id="GitHubButton"
+                  label="GitHub"
+                  size="normal"
+                  imageMso="WebPagePreview"
+                  screentip="Open GitHub Repository"
+                  supertip="Opens the ExcelQRPayments GitHub repository in your browser."
+                  onAction="OnOpenGitHub" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
